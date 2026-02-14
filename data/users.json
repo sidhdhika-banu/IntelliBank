@@ -1,0 +1,29 @@
+[
+  {
+    "user_id": 1,
+    "username": "admin",
+    "password": "admin123",
+    "email": "admin@securebank.com",
+    "full_name": "Admin User",
+    "account_balance": 50000,
+    "created_at": "2026-02-14T17:42:25.765Z"
+  },
+  {
+    "user_id": 2,
+    "username": "user1",
+    "password": "password123",
+    "email": "user1@example.com",
+    "full_name": "John Doe",
+    "account_balance": 12450,
+    "created_at": "2026-02-14T17:42:25.766Z"
+  },
+  {
+    "user_id": 3,
+    "username": "testuser",
+    "password": "test123",
+    "email": "test@example.com",
+    "full_name": "Test User",
+    "account_balance": 5000,
+    "created_at": "2026-02-14T17:42:25.766Z"
+  }
+]

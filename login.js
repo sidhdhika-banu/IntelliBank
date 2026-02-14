@@ -6,7 +6,7 @@
 // ============================================
 const LOG_CONFIG = {
     enabled: true,
-    endpoint: '/api/log', // Configure this to your IntelliSOC backend
+    endpoint: 'http://localhost:5000/api/log',  // Configure this to your IntelliSOC backend
     sessionId: generateSessionId(),
     deviceFingerprint: generateDeviceFingerprint()
 };

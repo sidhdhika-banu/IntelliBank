@@ -1,0 +1,29 @@
+{
+  "name": "intellisoc-backend-no-db",
+  "version": "1.0.0",
+  "description": "IntelliSOC Backend - No Database Required (JSON File Storage)",
+  "main": "server-no-db.js",
+  "scripts": {
+    "start": "node server-no-db.js",
+    "dev": "nodemon server-no-db.js"
+  },
+  "keywords": [
+    "security",
+    "banking",
+    "authentication",
+    "logging",
+    "no-database"
+  ],
+  "author": "IntelliSOC Research Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
