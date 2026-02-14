@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelliBank - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .dashboard-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%);
+            padding: 2rem;
+        }
+        
+        .dashboard-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        
+        .welcome-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .welcome-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #1A3A52 0%, #4A90E2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .dashboard-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            color: #1A3A52;
+            margin-bottom: 1rem;
+        }
+        
+        .dashboard-subtitle {
+            font-size: 1.125rem;
+            color: #475569;
+            margin-bottom: 2rem;
+        }
+        
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-card {
+            background: #F8FAFC;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #E2E8F0;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: #64748B;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1A3A52;
+        }
+        
+        .logout-btn {
+            margin-top: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #1A3A52 0%, #4A90E2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+        
+        .logout-btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="8" fill="#1A3A52"/>
+                    <path d="M12 20L18 14L24 20L30 14" stroke="#4A90E2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 26L18 20L24 26L30 20" stroke="#67B7DC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="logo-text">IntelliBank</span>
+            </a>
+            
+            <div class="nav-actions">
+                <a href="index.html" class="btn-primary">
+                    Logout
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <div class="dashboard-content">
+            <div class="welcome-card">
+                <div class="welcome-icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 4C13.37 4 8 9.37 8 16C8 22.63 13.37 28 20 28C26.63 28 32 22.63 32 16C32 9.37 26.63 4 20 4ZM20 10C22.21 10 24 11.79 24 14C24 16.21 22.21 18 20 18C17.79 18 16 16.21 16 14C16 11.79 17.79 10 20 10ZM20 26C16.67 26 13.8 24.34 12 21.9C12.03 19.36 17 17.98 20 17.98C22.99 17.98 27.97 19.36 28 21.9C26.2 24.34 23.33 26 20 26Z" fill="white"/>
+                    </svg>
+                </div>
+                
+                <h1 class="dashboard-title">Welcome to IntelliBank</h1>
+                <p class="dashboard-subtitle">Login successful! Your session is now active and being monitored by IntelliSOC.</p>
+                
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-label">Account Balance</div>
+                        <div class="stat-value">$12,450.00</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-label">Recent Transactions</div>
+                        <div class="stat-value">23</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-label">Active Cards</div>
+                        <div class="stat-value">3</div>
+                    </div>
+                </div>
+                
+                <a href="index.html" class="logout-btn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 3L17 7L13 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 7H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M7 17H5C3.89543 17 3 16.1046 3 15V9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Logout
+                </a>
+                
+                <div style="margin-top: 3rem; padding: 1.5rem; background: rgba(74, 144, 226, 0.1); border-radius: 12px; border-left: 4px solid #4A90E2;">
+                    <p style="color: #1A3A52; font-weight: 600; margin-bottom: 0.5rem;">🔒 IntelliBank Session Active</p>
+                    <p style="color: #475569; font-size: 0.95rem;">Your login activity is being tracked for security analysis. Session ID: <code id="sessionId" style="background: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;"></code></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Display session ID
+        const sessionId = localStorage.getItem('intellisoc_logs');
+        if (sessionId) {
+            try {
+                const logs = JSON.parse(sessionId);
+                if (logs.length > 0) {
+                    document.getElementById('sessionId').textContent = logs[0].sessionId || 'N/A';
+                }
+            } catch (e) {
+                document.getElementById('sessionId').textContent = 'N/A';
+            }
+        }
+        
+        // Log dashboard access
+        console.log('Dashboard accessed at:', new Date().toISOString());
+    </script>
+</body>
+</html>

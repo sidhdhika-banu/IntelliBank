@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelliBank - Internet Banking Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="login-page">
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-minimal">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="8" fill="#1A3A52"/>
+                    <path d="M12 20L18 14L24 20L30 14" stroke="#4A90E2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 26L18 20L24 26L30 20" stroke="#67B7DC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="logo-text">IntelliBank</span>
+            </a>
+            
+            <a href="index.html" class="back-home">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 10H5M5 10L10 15M5 10L10 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <div class="login-wrapper">
+            <!-- Left Side - Branding -->
+            <div class="login-branding">
+                <div class="branding-content">
+                    <div class="branding-icon">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="80" height="80" rx="20" fill="url(#brandGradient)"/>
+                            <path d="M24 40L36 28L48 40L60 28" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+                            <path d="M24 52L36 40L48 52L60 40" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+                            <defs>
+                                <linearGradient id="brandGradient" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#1A3A52"/>
+                                    <stop offset="1" stop-color="#4A90E2"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h1 class="branding-title">Welcome Back</h1>
+                    <p class="branding-subtitle">Secure access to your digital banking platform</p>
+                    
+                    <div class="security-features">
+                        <div class="security-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" stroke="#4A90E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 12L11 14L15 10" stroke="#4A90E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>256-bit Encryption</span>
+                        </div>
+                        <div class="security-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="#4A90E2" stroke-width="2"/>
+                                <path d="M12 6V12L16 14" stroke="#4A90E2" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>24/7 Monitoring</span>
+                        </div>
+                        <div class="security-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 8H18C19.1 8 20 8.9 20 10V20C20 21.1 19.1 22 18 22H6C4.9 22 4 21.1 4 20V10C4 8.9 4.9 8 6 8H7V6C7 3.24 9.24 1 12 1C14.76 1 17 3.24 17 6V8Z" stroke="#4A90E2" stroke-width="2"/>
+                                <path d="M12 14V17" stroke="#4A90E2" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="12" cy="14" r="1" fill="#4A90E2"/>
+                            </svg>
+                            <span>Secure Login</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Login Form -->
+            <div class="login-form-section">
+                <div class="login-form-container">
+                    <div class="form-header">
+                        <h2 class="form-title">Internet Banking Login</h2>
+                        <p class="form-subtitle">Enter your credentials to access your account</p>
+                    </div>
+
+                    <form id="loginForm" class="login-form">
+                        <!-- Alert Messages -->
+                        <div id="alertMessage" class="alert-message" style="display: none;"></div>
+
+                        <!-- Username Field -->
+                        <div class="form-group">
+                            <label for="username" class="form-label">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 1C6.24 1 4 3.24 4 6C4 8.76 6.24 11 9 11C11.76 11 14 8.76 14 6C14 3.24 11.76 1 9 1ZM9 13C5.67 13 1 14.67 1 17V18H17V17C17 14.67 12.33 13 9 13Z" fill="currentColor"/>
+                                </svg>
+                                Username / Customer ID
+                            </label>
+                            <input 
+                                type="text" 
+                                id="username" 
+                                name="username" 
+                                class="form-input" 
+                                placeholder="Enter your username"
+                                required
+                                autocomplete="username"
+                            >
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="form-group">
+                            <label for="password" class="form-label">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14 6H13V4C13 1.79 11.21 0 9 0C6.79 0 5 1.79 5 4V6H4C2.9 6 2 6.9 2 8V16C2 17.1 2.9 18 4 18H14C15.1 18 16 17.1 16 16V8C16 6.9 15.1 6 14 6ZM9 13C7.9 13 7 12.1 7 11C7 9.9 7.9 9 9 9C10.1 9 11 9.9 11 11C11 12.1 10.1 13 9 13ZM11.1 6H6.9V4C6.9 2.84 7.84 1.9 9 1.9C10.16 1.9 11.1 2.84 11.1 4V6Z" fill="currentColor"/>
+                                </svg>
+                                Password
+                            </label>
+                            <div class="password-field">
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    name="password" 
+                                    class="form-input" 
+                                    placeholder="Enter your password"
+                                    required
+                                    autocomplete="current-password"
+                                >
+                                <button type="button" class="toggle-password" id="togglePassword">
+                                    <svg class="eye-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10 4C5 4 1.73 7.11 1 10C1.73 12.89 5 16 10 16C15 16 18.27 12.89 19 10C18.27 7.11 15 4 10 4ZM10 14C7.79 14 6 12.21 6 10C6 7.79 7.79 6 10 6C12.21 6 14 7.79 14 10C14 12.21 12.21 14 10 14ZM10 8C8.9 8 8 8.9 8 10C8 11.1 8.9 12 10 12C11.1 12 12 11.1 12 10C12 8.9 11.1 8 10 8Z" fill="currentColor"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Remember Me & Forgot Password -->
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="rememberMe" name="rememberMe">
+                                <span class="checkbox-text">Remember me</span>
+                            </label>
+                            <a href="#" class="forgot-link">Forgot Password?</a>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn-login" id="loginBtn">
+                            <span class="btn-text">Login to Account</span>
+                            <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+
+                        <!-- Loading Spinner -->
+                        <div class="loading-spinner" id="loadingSpinner" style="display: none;">
+                            <div class="spinner"></div>
+                            <span>Authenticating...</span>
+                        </div>
+                    </form>
+
+                    <!-- Additional Options -->
+                    <div class="form-footer">
+                        <p class="footer-text">Don't have an account? <a href="#" class="register-link">Register Now</a></p>
+                        <div class="divider">
+                            <span>or</span>
+                        </div>
+                        <div class="alternative-login">
+                            <button class="alt-login-btn">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 1C5.03 1 1 5.03 1 10C1 14.97 5.03 19 10 19C14.97 19 19 14.97 19 10C19 5.03 14.97 1 10 1ZM10 17C6.13 17 3 13.87 3 10C3 6.13 6.13 3 10 3C13.87 3 17 6.13 17 10C17 13.87 13.87 17 10 17Z" fill="currentColor"/>
+                                    <path d="M10 6C7.79 6 6 7.79 6 10C6 12.21 7.79 14 10 14C12.21 14 14 12.21 14 10C14 7.79 12.21 6 10 6Z" fill="currentColor"/>
+                                </svg>
+                                Login with Biometric
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Security Notice -->
+                    <div class="security-notice">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1L2 5V9C2 13.55 5.15 17.74 10 19C14.85 17.74 18 13.55 18 9V5L10 1Z" fill="#FFA726" opacity="0.2"/>
+                            <path d="M10 1L2 5V9C2 13.55 5.15 17.74 10 19C14.85 17.74 18 13.55 18 9V5L10 1Z" stroke="#FFA726" stroke-width="1.5"/>
+                            <path d="M10 6V10" stroke="#FFA726" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="10" cy="13" r="0.5" fill="#FFA726"/>
+                        </svg>
+                        <p>Never share your password. IntelliBank will never ask for your password via email or phone.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="login-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 IntelliBank. All rights reserved.</p>
+            <div class="footer-links-inline">
+                <a href="#">Terms</a>
+                <span>•</span>
+                <a href="#">Privacy</a>
+                <span>•</span>
+                <a href="#">Security</a>
+                <span>•</span>
+                <a href="#">Help</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="login.js"></script>
+</body>
+</html>
